@@ -80,16 +80,13 @@ Test this function by hand in the console to get it working, and when you think 
 let testArray = [2, 3, 4]; //eslint-disable-line
 
 function sumArray(sumArr) {
-  //eslint-disable-line
-  let array2 =sum(sum(testArray[0],testArray[1]),testArray[2]);
-  console.log(array2);
-  let array3=[testArray[0],testArray[1],testArray[2],' was passed in as an array of numbers, and 9 is their sum.'];
-  console.log(array3);
-  let array5 =[array2,array3];
-  console.log(array5);
-  return[array5,`${testArray[0]},${testArray[1]},${testArray[2]}`,` was passed in as an array of numbers and 9 is their sum.`];
+  //eslint-disable-lines
+  let result =0;
+  for (let i=0;i<sumArr.lenght;i++){
+    result = sum(sumArr[i],result)[0];
+  }
+   return[result,`${sumArr[0]},${sumArr[1]},${sumArr[2]}.`,` was passed in as an array of numbers, and ${result} is their sum .`];
 }
-
 // Here is the test for sumArray(); uncomment it to run it
 
  testSumArray(testArray);
@@ -109,11 +106,17 @@ Test this function by hand in the console to get it working, and when you think 
 // Write your code here
 function multiplyArray(multArr) {
   //eslint-disable-line
-  
-}
+ let result =1;
+ for (let i=0; i<multArr.lenght;i++){
+   result = multiply(multArr[i],result)[0];
+
+ }
+  return [result,`The numbers ${multArr[0]}, ${multArr[1]}, ${multArr[2]} have a product of ${result}.`];
+  }
+
 
 // Here is the test for multiplyArray(); uncomment it to run it
-// testMultiplyArray(testArray);
+testMultiplyArray(testArray);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop.
 
@@ -138,9 +141,11 @@ let testDynamicArray = [1, 2, 3, 4, 5]; //eslint-disable-line
 
 function multiplyAnyArray(dynamicArray) {
   //eslint-disable-line
+ 
 }
 
+
 // Here is the test for multiplyArray(); uncomment it to run it
-// testMultiplyAnyArray(testDynamicArray);
+//testMultiplyAnyArray(testDynamicArray);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. You're done! Submit the link to the repo following the instructions in Canvas.
